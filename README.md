@@ -1,14 +1,130 @@
 # NUVCLUBS
 
-NUV Clubs is a robust online platform designed for managing clubs and facilitating efficient communication among various user roles, including administrators, students, and moderators. This website provides an intuitive interface for users to engage in club-related activities, ensuring a seamless experience for all participants.
+NUVCLUBS is a web based platform designed to streamline club management and intra university communication. It provides a centralized system where users can register, join clubs, view activities, and communicate using the integrated chat module. The system supports multiple user roles and maintains structured data for club operations, announcements, profile management, and event updates.
 
-Administrators hold the highest authority and are responsible for overseeing the platform. They can create and manage clubs, post events, publish notices, and control user access. Additionally, administrators have the ability to assign and manage moderators, who act as club facilitators.
+---
 
-Moderators, appointed by the administrators, have specific club-level privileges. They can post events, publish notices, allow students to join their respective clubs, and generate reports on user participation in club events. This functionality allows moderators to effectively manage their clubs and monitor member engagement.
+## Features
 
-Students form the core user group and have access to a wide range of features. They receive timely notifications about events in the clubs they are part of, enabling them to stay updated. Furthermore, students can express their interest in joining any club by simply selecting the desired club through a checkbox. This action triggers a request simultaneously sent to both administrators and moderators, who can then review and approve the student's request.
+### Club Management
+Users can browse available clubs, view details, see ongoing events, and request to join. Each club has a dedicated section for posts, images, updates, and member information.
 
-In addition to the clubs' management features, NUV Clubs also includes NUV Chats, a text-based communication system. This feature fosters interaction among users, administrators, and moderators. It provides a convenient platform for seeking assistance, discussing club-related matters, or addressing any queries or concerns.
+### User Authentication
+The system includes secure registration and login using session based authentication. User roles such as Admin, Moderator, and Member are supported. Access control is implemented through server side checks.
 
-Overall, NUV Clubs offers a comprehensive solution for club management, empowering administrators, moderators, and students with the necessary tools and features to streamline club activities, facilitate seamless communication, and enhance the overall club experience.
+### Profile Management
+Users can upload profile images, update personal details, manage preferences, and maintain their member identity across clubs.
 
+### Moderator and Admin Controls
+Moderators handle member requests, approve or reject join requests, publish announcements, upload media, and manage club pages. Admins have extended privileges to manage users, clubs, and system level configurations.
+
+### Event and Announcement Posting
+Club panels allow moderators to upload event posters, publish updates, add descriptions, and manage timelines. The front facing homepage displays events through sliders, galleries, and frames.
+
+### Image and Gallery Management
+The platform supports uploading and storing event images, profile pictures, and gallery items. Structured folders are maintained for organized storage.
+
+### Integrated Chat System
+The NUVCHATS module provides real time communication features. Registered users can start conversations, send messages, view chat history, and interact with club members. PHP and SQL based message handling ensures reliable delivery and retrieval.
+
+### Session Handling and Error Management
+The system includes custom session handlers, inactivity checks, redirection control, and graceful error pages to maintain smooth usage flow.
+
+---
+
+## Technology Stack
+
+**Frontend**
+CSS  
+HTML  
+JavaScript  
+Font Awesome
+
+**Backend**
+PHP  
+Custom MVC style module layout  
+Session based authentication  
+Server side rendering
+
+**Database**
+MySQL  
+Tables for users, clubs, moderators, chat messages, posts, events, and media  
+SQL scripts included in the project (club.sql, chatapp.sql)
+
+---
+
+## Directory Structure Overview
+
+The project is organized into the following major modules:
+
+**admin/**  
+Administrative interface for system level management  
+
+**css/**  
+Stylesheets used across all modules  
+
+**dbconnect.php**  
+Database configuration and connection file  
+
+**homepage/**  
+Public homepage layout and event showcase screens  
+
+**imageGallery/**  
+Module for displaying uploaded club and event images  
+
+**login.php, logout.php**  
+Authentication flow and session management  
+
+**moderator/**  
+Moderator dashboard, approvals, content uploads, event creation  
+
+**profile/**  
+User profile pages, image uploads, and detail editing  
+
+**NUVCHATS/**  
+Chat system code folder including message handlers and UI  
+
+**errors.php, session_error.php**  
+Custom error screens and session failure handlers  
+
+**slider/**  
+Homepage slider images and scripts  
+
+---
+
+## Database
+
+The system uses MySQL with structured tables to support users, clubs, moderators, posts, and chat messages. SQL schema files are included:
+
+club.sql  
+chatapp.sql  
+
+These contain table definitions, foreign keys, and sample inserts.  
+
+---
+
+## How It Works
+
+1. Users register and authenticate into the system.  
+2. After login, users can browse clubs or view their existing memberships.  
+3. Moderators can upload events, announcements, and media.  
+4. The homepage displays featured events, club information, and sliders.  
+5. The chat system enables direct communication between logged in users.  
+6. The database stores user details, messages, posts, events, and media paths.  
+7. Session control ensures secure access throughout the workflow.  
+
+---
+
+## Setup Instructions
+
+1. Import the SQL files (club.sql, chatapp.sql) into a MySQL server  
+2. Configure database credentials in dbconnect.php  
+3. Place the project folder in a PHP supported environment such as XAMPP, WAMP, or Apache  
+4. Start the server and navigate to index.php in a browser  
+5. Register a new account and begin accessing available modules  
+
+---
+
+## Notes
+
+This repository contains the complete source code and assets for the NUVCLUBS platform, including media directories, backend modules, and SQL schemas. All functionality depends on correct configuration of PHP sessions, directory permissions, and MySQL connectivity.
